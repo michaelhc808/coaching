@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Your Name — Endurance & Hybrid Coach</title>
+<title>Michael — Endurance & Hybrid Coach</title>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -49,32 +49,25 @@
     border-radius: 50%;
     margin: 0 auto 18px;
     position: relative;
-    cursor: pointer;
   }
 
   .photo-circle {
     width: 100%; height: 100%;
     border-radius: 50%;
-    background: var(--accent-light);
     border: 3px solid var(--border);
-    display: flex; flex-direction: column;
-    align-items: center; justify-content: center;
     overflow: hidden;
-    transition: border-color 0.2s;
   }
-  .photo-circle:hover { border-color: var(--accent); }
-  .photo-circle img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; display: none; }
-  .photo-placeholder { display: flex; flex-direction: column; align-items: center; gap: 4px; }
-  .photo-icon { font-size: 26px; }
-  .photo-hint { font-size: 9px; font-weight: 600; color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase; }
-  .photo-input { display: none; }
-  .upload-badge {
-    position: absolute; bottom: 4px; right: 4px;
-    width: 26px; height: 26px; border-radius: 50%;
-    background: var(--accent); color: #fff; font-size: 15px;
-    display: flex; align-items: center; justify-content: center;
-    border: 2px solid var(--bg);
+
+  .photo-circle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    filter: grayscale(100%);
+    transition: filter 0.3s;
   }
+
+  .photo-circle img:hover { filter: grayscale(0%); }
 
   .tagline {
     font-size: 10px; font-weight: 600;
@@ -227,26 +220,19 @@
 <body>
 <div class="page">
 
-  <!-- ══ HEADER ══ -->
-  <!-- TO DO: Replace "Your Name" with your real name (appears here + in footer) -->
+  <!-- Header -->
   <div class="header">
-    <div class="photo-wrap" onclick="document.getElementById('photoInput').click()">
+    <div class="photo-wrap">
       <div class="photo-circle">
-        <img id="photoImg" src="" alt="Your photo">
-        <div class="photo-placeholder" id="photoPlaceholder">
-          <span class="photo-icon">🏃</span>
-          <span class="photo-hint">Add photo</span>
-        </div>
+        <img src="https://i.ibb.co/Kc4YLMF3/IMG-0846-optimized-6000.jpg" alt="Michael - Running Coach">
       </div>
-      <div class="upload-badge">＋</div>
     </div>
-    <input type="file" id="photoInput" class="photo-input" accept="image/*">
     <p class="tagline">Endurance &amp; Hybrid Coach</p>
-    <h1 class="name">Your Name</h1>
+    <h1 class="name">Michael</h1>
     <p class="bio">Helping runners of all levels cross finish lines they never thought possible — from first 5Ks to Boston Qualifiers. Virtual coaching built around your life.</p>
   </div>
 
-  <!-- ══ STATS ══ -->
+  <!-- Stats -->
   <div class="stats">
     <div class="stat">
       <span class="stat-num">4:20</span>
@@ -262,21 +248,19 @@
     </div>
   </div>
 
-  <!-- ══ PRIMARY CTA ══ -->
-  <!-- TO DO: Replace YOUR_CALENDLY_LINK with your actual Calendly URL -->
+  <!-- CTA -->
   <a class="btn-primary" href="https://calendly.com/michaelhc7/30min">
     🗓 Book a Free Discovery Call
   </a>
 
-  <!-- ══ SOCIAL BUTTONS ══ -->
-  <!-- TO DO: Replace each href with your real links -->
+  <!-- Social -->
   <p class="section-label">Find me here</p>
   <div class="social-grid">
-    <a class="social-btn" href="strava.app.link/nyskbUQqGSb">
+    <a class="social-btn" href="https://strava.app.link/nyskbUQqGSb" target="_blank" rel="noopener">
       <div class="social-icon">🟠</div>
       <span class="social-name">Strava</span>
     </a>
-    <a class="social-btn" href="https://www.instagram.com/michaelhc1/">
+    <a class="social-btn" href="https://www.instagram.com/michaelhc1/" target="_blank" rel="noopener">
       <div class="social-icon">📸</div>
       <span class="social-name">Instagram</span>
     </a>
@@ -286,59 +270,31 @@
     </a>
   </div>
 
-  <!-- ══ EXPLORE CARDS ══ -->
-  <!-- TO DO: Replace hrefs with your packages page and free guide download link -->
-  <p class="section-label">Explore</p>
+  <!-- Card -->
+  <p class="section-label">Work with me</p>
   <div class="cards">
-    <a class="card" href="YOUR_PACKAGES_LINK">
+    <a class="card" href="https://calendly.com/michaelhc7/30min" target="_blank" rel="noopener">
       <div class="card-emoji">📋</div>
       <div class="card-body">
         <div class="card-title">Coaching Packages</div>
-        <div class="card-sub">Foundation · Race Ready · Elite Access</div>
-      </div>
-      <span class="card-arrow">›</span>
-    </a>
-    <a class="card" href="YOUR_GUIDE_LINK">
-      <div class="card-emoji">📄</div>
-      <div class="card-body">
-        <div class="card-title">Free Marathon Training Guide</div>
-        <div class="card-sub">12-week plan — download free</div>
+        <div class="card-sub">Book a free call to find the right fit</div>
       </div>
       <span class="card-arrow">›</span>
     </a>
   </div>
 
-  <!-- ══ TESTIMONIAL ══ -->
-  <!-- TO DO: Replace with your first real client quote once you have one -->
+  <!-- Testimonial -->
   <div class="testimonial">
     <span class="quote-mark">"</span>
     <p class="testimonial-text">Add your first client testimonial here. One powerful sentence builds immediate trust.</p>
     <p class="testimonial-author">— Client Name, Race Name</p>
   </div>
 
-  <!-- ══ FOOTER ══ -->
+  <!-- Footer -->
   <div class="footer">
-    <p class="footer-text">Your Name · Virtual Running Coach · Worldwide</p>
+    <p class="footer-text">Michael · Virtual Running Coach · Worldwide</p>
   </div>
 
 </div>
-
-<script>
-  const input = document.getElementById('photoInput');
-  const img = document.getElementById('photoImg');
-  const placeholder = document.getElementById('photoPlaceholder');
-
-  input.addEventListener('change', function(e) {
-    const file = e.target.files[0];
-    if (!file) return;
-    const reader = new FileReader();
-    reader.onload = function(ev) {
-      img.src = ev.target.result;
-      img.style.display = 'block';
-      placeholder.style.display = 'none';
-    };
-    reader.readAsDataURL(file);
-  });
-</script>
 </body>
 </html>
