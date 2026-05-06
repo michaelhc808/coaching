@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your Name — Endurance & Hybrid Coach</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #FBF8F5;
+    --surface: #FFFFFF;
+    --border: #EDE5DA;
+    --text: #1A1410;
+    --muted: #907D6B;
+    --accent: #D35F2A;
+    --accent-hover: #B85224;
+    --accent-light: #FBF0E8;
+    --accent-border: rgba(211,95,42,0.18);
+    --accent-shadow: rgba(211,95,42,0.28);
+    --font-display: 'DM Serif Display', serif;
+    --font-body: 'DM Sans', sans-serif;
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-body);
+    min-height: 100vh;
+  }
+
+  .page {
+    max-width: 460px;
+    margin: 0 auto;
+    padding: 44px 22px 64px;
+  }
+
+  /* ── Header ── */
+  .header {
+    text-align: center;
+    margin-bottom: 24px;
+    animation: fadeUp 0.65s ease both;
+  }
+
+  .photo-wrap {
+    width: 108px;
+    height: 108px;
+    border-radius: 50%;
+    margin: 0 auto 18px;
+    position: relative;
+    cursor: pointer;
+  }
+
+  .photo-circle {
+    width: 100%; height: 100%;
+    border-radius: 50%;
+    background: var(--accent-light);
+    border: 3px solid var(--border);
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    overflow: hidden;
+    transition: border-color 0.2s;
+  }
+  .photo-circle:hover { border-color: var(--accent); }
+  .photo-circle img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; display: none; }
+  .photo-placeholder { display: flex; flex-direction: column; align-items: center; gap: 4px; }
+  .photo-icon { font-size: 26px; }
+  .photo-hint { font-size: 9px; font-weight: 600; color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase; }
+  .photo-input { display: none; }
+  .upload-badge {
+    position: absolute; bottom: 4px; right: 4px;
+    width: 26px; height: 26px; border-radius: 50%;
+    background: var(--accent); color: #fff; font-size: 15px;
+    display: flex; align-items: center; justify-content: center;
+    border: 2px solid var(--bg);
+  }
+
+  .tagline {
+    font-size: 10px; font-weight: 600;
+    letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--accent); margin-bottom: 6px;
+  }
+
+  .name {
+    font-family: var(--font-display);
+    font-size: 32px; color: var(--text);
+    margin-bottom: 10px; line-height: 1.1;
+  }
+
+  .bio {
+    font-size: 13.5px; font-weight: 300;
+    color: var(--muted); line-height: 1.78;
+    max-width: 310px; margin: 0 auto;
+  }
+
+  /* ── Stats ── */
+  .stats {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 1px; background: var(--border);
+    border: 1px solid var(--border);
+    border-radius: 16px; overflow: hidden;
+    margin-bottom: 20px;
+    animation: fadeUp 0.65s 0.08s ease both;
+  }
+  .stat { background: var(--surface); padding: 15px 6px; text-align: center; }
+  .stat-num {
+    font-family: var(--font-display);
+    font-size: 21px; color: var(--accent);
+    display: block; line-height: 1;
+  }
+  .stat-label {
+    font-size: 8.5px; font-weight: 600;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--muted); display: block; margin-top: 4px;
+    line-height: 1.4;
+  }
+
+  /* ── Primary CTA ── */
+  .btn-primary {
+    display: flex; align-items: center; justify-content: center; gap: 8px;
+    width: 100%; padding: 16px 24px;
+    background: var(--accent); color: #fff;
+    text-decoration: none; border-radius: 100px;
+    font-family: var(--font-body);
+    font-size: 13px; font-weight: 600; letter-spacing: 0.05em;
+    margin-bottom: 22px;
+    transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+    cursor: pointer; border: none;
+    box-shadow: 0 5px 20px var(--accent-shadow);
+    animation: fadeUp 0.65s 0.14s ease both;
+  }
+  .btn-primary:hover { background: var(--accent-hover); transform: translateY(-2px); box-shadow: 0 8px 26px var(--accent-shadow); }
+
+  /* ── Section label ── */
+  .section-label {
+    font-size: 9.5px; font-weight: 600;
+    letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--muted); margin-bottom: 10px;
+  }
+
+  /* ── Social grid ── */
+  .social-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 10px; margin-bottom: 22px;
+    animation: fadeUp 0.65s 0.2s ease both;
+  }
+
+  .social-btn {
+    display: flex; flex-direction: column; align-items: center; gap: 6px;
+    padding: 15px 8px; background: var(--surface);
+    border: 1px solid var(--border); border-radius: 16px;
+    text-decoration: none; color: var(--text);
+    transition: border-color 0.2s, transform 0.15s, box-shadow 0.15s;
+    cursor: pointer;
+  }
+  .social-btn:hover { border-color: var(--accent); transform: translateY(-2px); box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
+
+  .social-icon {
+    width: 42px; height: 42px; border-radius: 12px;
+    background: var(--accent-light);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 20px;
+  }
+  .social-name { font-size: 11px; font-weight: 500; }
+
+  /* ── Link cards ── */
+  .cards { animation: fadeUp 0.65s 0.26s ease both; }
+
+  .card {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 16px; padding: 16px 18px; margin-bottom: 9px;
+    display: flex; align-items: center; gap: 14px;
+    text-decoration: none; color: var(--text);
+    transition: border-color 0.2s, transform 0.15s, box-shadow 0.15s;
+    cursor: pointer;
+  }
+  .card:hover { border-color: var(--accent); transform: translateY(-2px); box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
+
+  .card-emoji {
+    width: 44px; height: 44px; border-radius: 12px;
+    background: var(--accent-light);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 20px; flex-shrink: 0;
+  }
+  .card-body { flex: 1; }
+  .card-title { font-size: 13.5px; font-weight: 600; margin-bottom: 2px; }
+  .card-sub { font-size: 11.5px; color: var(--muted); font-weight: 300; }
+  .card-arrow { color: var(--accent); font-size: 20px; opacity: 0.8; }
+
+  /* ── Testimonial ── */
+  .testimonial {
+    background: var(--accent-light);
+    border: 1px solid var(--accent-border);
+    border-radius: 16px; padding: 20px; margin-bottom: 9px;
+    animation: fadeUp 0.65s 0.32s ease both;
+  }
+  .quote-mark {
+    font-family: var(--font-display); font-size: 42px;
+    color: var(--accent); line-height: 0.75;
+    margin-bottom: 8px; display: block; opacity: 0.35;
+  }
+  .testimonial-text {
+    font-family: var(--font-display); font-style: italic;
+    font-size: 15px; color: var(--text);
+    line-height: 1.65; margin-bottom: 10px;
+  }
+  .testimonial-author {
+    font-size: 10px; font-weight: 600;
+    letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--accent);
+  }
+
+  /* ── Footer ── */
+  .footer {
+    text-align: center; margin-top: 32px;
+    animation: fadeUp 0.65s 0.38s ease both;
+  }
+  .footer-text { font-size: 10.5px; color: var(--muted); font-weight: 300; letter-spacing: 0.04em; }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(14px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- ══ HEADER ══ -->
+  <!-- TO DO: Replace "Your Name" with your real name (appears here + in footer) -->
+  <div class="header">
+    <div class="photo-wrap" onclick="document.getElementById('photoInput').click()">
+      <div class="photo-circle">
+        <img id="photoImg" src="" alt="Your photo">
+        <div class="photo-placeholder" id="photoPlaceholder">
+          <span class="photo-icon">🏃</span>
+          <span class="photo-hint">Add photo</span>
+        </div>
+      </div>
+      <div class="upload-badge">＋</div>
+    </div>
+    <input type="file" id="photoInput" class="photo-input" accept="image/*">
+    <p class="tagline">Endurance &amp; Hybrid Coach</p>
+    <h1 class="name">Your Name</h1>
+    <p class="bio">Helping runners of all levels cross finish lines they never thought possible — from first 5Ks to Boston Qualifiers. Virtual coaching built around your life.</p>
+  </div>
+
+  <!-- ══ STATS ══ -->
+  <div class="stats">
+    <div class="stat">
+      <span class="stat-num">4:20</span>
+      <span class="stat-label">Mile PR</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num">2:37</span>
+      <span class="stat-label">Marathon PR</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num">🏆</span>
+      <span class="stat-label">2023 Spartan NA Age Group Champ</span>
+    </div>
+  </div>
+
+  <!-- ══ PRIMARY CTA ══ -->
+  <!-- TO DO: Replace YOUR_CALENDLY_LINK with your actual Calendly URL -->
+  <a class="btn-primary" href="YOUR_CALENDLY_LINK">
+    🗓 Book a Free Discovery Call
+  </a>
+
+  <!-- ══ SOCIAL BUTTONS ══ -->
+  <!-- TO DO: Replace each href with your real links -->
+  <p class="section-label">Find me here</p>
+  <div class="social-grid">
+    <a class="social-btn" href="YOUR_STRAVA_LINK">
+      <div class="social-icon">🟠</div>
+      <span class="social-name">Strava</span>
+    </a>
+    <a class="social-btn" href="YOUR_INSTAGRAM_LINK">
+      <div class="social-icon">📸</div>
+      <span class="social-name">Instagram</span>
+    </a>
+    <a class="social-btn" href="mailto:YOUR_EMAIL_ADDRESS">
+      <div class="social-icon">✉️</div>
+      <span class="social-name">Email me</span>
+    </a>
+  </div>
+
+  <!-- ══ EXPLORE CARDS ══ -->
+  <!-- TO DO: Replace hrefs with your packages page and free guide download link -->
+  <p class="section-label">Explore</p>
+  <div class="cards">
+    <a class="card" href="YOUR_PACKAGES_LINK">
+      <div class="card-emoji">📋</div>
+      <div class="card-body">
+        <div class="card-title">Coaching Packages</div>
+        <div class="card-sub">Foundation · Race Ready · Elite Access</div>
+      </div>
+      <span class="card-arrow">›</span>
+    </a>
+    <a class="card" href="YOUR_GUIDE_LINK">
+      <div class="card-emoji">📄</div>
+      <div class="card-body">
+        <div class="card-title">Free Marathon Training Guide</div>
+        <div class="card-sub">12-week plan — download free</div>
+      </div>
+      <span class="card-arrow">›</span>
+    </a>
+  </div>
+
+  <!-- ══ TESTIMONIAL ══ -->
+  <!-- TO DO: Replace with your first real client quote once you have one -->
+  <div class="testimonial">
+    <span class="quote-mark">"</span>
+    <p class="testimonial-text">Add your first client testimonial here. One powerful sentence builds immediate trust.</p>
+    <p class="testimonial-author">— Client Name, Race Name</p>
+  </div>
+
+  <!-- ══ FOOTER ══ -->
+  <div class="footer">
+    <p class="footer-text">Your Name · Virtual Running Coach · Worldwide</p>
+  </div>
+
+</div>
+
+<script>
+  const input = document.getElementById('photoInput');
+  const img = document.getElementById('photoImg');
+  const placeholder = document.getElementById('photoPlaceholder');
+
+  input.addEventListener('change', function(e) {
+    const file = e.target.files[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = function(ev) {
+      img.src = ev.target.result;
+      img.style.display = 'block';
+      placeholder.style.display = 'none';
+    };
+    reader.readAsDataURL(file);
+  });
+</script>
+</body>
+</html>
