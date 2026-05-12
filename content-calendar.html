@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Content Calendar — May to August 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg: #F7F4F0;
+    --surface: #FFFFFF;
+    --border: #E8E2D9;
+    --text: #1A1410;
+    --muted: #907D6B;
+    --accent: #D35F2A;
+    --accent-light: #FBF0E8;
+    --font: 'DM Sans', sans-serif;
+  }
+  body { background: var(--bg); color: var(--text); font-family: var(--font); padding: 40px 24px 80px; }
+  .page { max-width: 900px; margin: 0 auto; }
+  .page-header { margin-bottom: 36px; }
+  .page-label { font-size: 10px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 6px; }
+  .page-title { font-size: 28px; font-weight: 500; color: var(--text); margin-bottom: 6px; }
+  .page-sub { font-size: 13px; color: var(--muted); font-weight: 300; }
+  .legend { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 32px; }
+  .legend-item { display: flex; align-items: center; gap: 6px; font-size: 11px; color: var(--muted); font-weight: 400; }
+  .legend-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+  .month-block { margin-bottom: 40px; }
+  .month-header { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; }
+  .month-title { font-size: 18px; font-weight: 500; color: var(--text); white-space: nowrap; }
+  .month-sub { font-size: 11px; color: var(--muted); white-space: nowrap; }
+  .month-line { flex: 1; height: 0.5px; background: var(--border); }
+  .event-banner { display: flex; align-items: center; gap: 8px; padding: 9px 14px; border-radius: 10px; margin-bottom: 12px; font-size: 12px; font-weight: 500; }
+  .event-koko { background: #FAECE7; color: #993C1D; border: 0.5px solid #F0997B; }
+  .event-spartan { background: #EAF3DE; color: #3B6D11; border: 0.5px solid #97C459; }
+  .week { background: var(--surface); border: 0.5px solid var(--border); border-radius: 14px; margin-bottom: 10px; overflow: hidden; }
+  .week-label { font-size: 10px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); padding: 8px 16px; background: var(--bg); border-bottom: 0.5px solid var(--border); }
+  .posts { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .post { padding: 12px 14px; border-right: 0.5px solid var(--border); }
+  .post:last-child { border-right: none; }
+  .post-format { display: inline-block; font-size: 9px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; padding: 2px 8px; border-radius: 20px; margin-bottom: 6px; }
+  .fmt-reel     { background: #FAECE7; color: #993C1D; }
+  .fmt-carousel { background: #E6F1FB; color: #185FA5; }
+  .fmt-static   { background: #EAF3DE; color: #3B6D11; }
+  .fmt-story    { background: #FAEEDA; color: #854F0B; }
+  .post-title { font-size: 12px; font-weight: 500; color: var(--text); line-height: 1.45; margin-bottom: 4px; }
+  .post-pillar { font-size: 10px; color: var(--muted); font-weight: 300; line-height: 1.4; }
+  .footer { text-align: center; margin-top: 48px; font-size: 11px; color: var(--muted); font-weight: 300; }
+  @media (max-width: 600px) {
+    .posts { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .post:nth-child(2) { border-right: none; }
+    .post:nth-child(odd) { border-right: 0.5px solid var(--border); }
+    .post:nth-child(3), .post:nth-child(4) { border-top: 0.5px solid var(--border); }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="page-header">
+    <p class="page-label">Michael · @michaelhc1</p>
+    <h1 class="page-title">Content Calendar — May to August 2026</h1>
+    <p class="page-sub">4 posts per week · Reels, Carousels, Static posts, Story series · Anchored around Koko Head record attempt (July) and Hawaii Spartan Race (August)</p>
+  </div>
+
+  <div class="legend">
+    <div class="legend-item"><div class="legend-dot" style="background:#D85A30;"></div> Reel</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#378ADD;"></div> Carousel</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#639922;"></div> Static post</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#BA7517;"></div> Story series</div>
+  </div>
+
+  <!-- MAY -->
+  <div class="month-block">
+    <div class="month-header">
+      <span class="month-title">May</span>
+      <span class="month-sub">Foundation — introduce yourself & your story</span>
+      <div class="month-line"></div>
+    </div>
+
+    <div class="week">
+      <div class="week-label">Week 1 — May 12–18</div>
+      <div class="posts">
+        <div class="post"><span class="post-format fmt-reel">Reel</span><div class="post-title">I ran a 4:20 mile with almost zero speedwork</div><div class="post-pillar">Education · Mile Framework hook</div></div>
+        <div class="post"><span class="post-format fmt-carousel">Carousel</span><div class="post-title">3 reasons high mileage beats intervals for the mile</div><div class="post-pillar">Education · Pillar 1</div></div>
+        <div class="post"><span class="post-format fmt-static">Static</span><div class="post-title">Client win: 21-minute marathon PR</div><div class="post-pillar">Social proof</div></div>
+        <div class="post"><span class="post-format fmt-reel">Reel</span><div class="post-title">What I actually do in a training week (70 mpw)</div><div class="post-pillar">Personal · Behind the scenes</div></div>
+      </div>
+    </div>
+
+    <div class="week">
+      <div class="week-label">Week 2 — May 19–25</div>
+      <div class="posts">
+        <div class="post"><span class="post-format fmt-carousel">Carousel</span><div class="post-title">The talking test: how to know if you're at threshold</div><div class="post-pillar">Education · Pillar 2</div></div>
+        <div class="post"><span class="post-format fmt-reel">Reel</span><div class="post-title">Why most people blow up in the first 200m of a mile</div><div class="post-pillar">Education · Pillar 3</div></div>
+        <div class="post"><span class="post-format fmt-static">Static</span><div class="post-title">My 2023 Spartan NA Age Group win — what got me there</div><div class="post-pillar">Credibility · Personal</div></div>
+        <div class="post"><span class="post-format fmt-carousel">Carousel</span><div class="post-title">5 mistakes runners make when increasing mileage</div><div class="post-pillar">Education · Pillar 1</div></div>
+      </div>
+    </div>
+
+    <div class="week">
+      <div class="week-label">Week 3 — May 26–31</div>
+      <div class="posts">
+        <div class="post"><span class="post-format fmt-reel">Reel</span><div class="post-title">Threshold vs intervals: which one actually makes you faster?</div><div class="post-pillar">Education · Pillar 2</div></div>
+        <div class="post"><span class="post-format fmt-carousel">Carousel</span><div class="post-title">How to fuel for high mileage weeks</div><div class="post-pillar">Education · Nutrition</div></div>
+        <div class="post"><span class="post-format fmt-reel">Reel</span><div class="post-title">A day in my life as a virtual running coach</div><div class="post-pillar">Personal · Behind the scenes</div></div>
+        <div class="post"><span class="post-format fmt-static">Static</span><div class="post-title">Poll: roads vs trails — where do you do most of your miles?</div><div class="post-pillar">Engagement</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- JUNE -->
+  <div class="month-block">
+    <div class="month-header">
+      <span class="month-title">June</span>
+      <span class="month-sub">Build — tease the Koko Head redemption arc</span>
+      <div class="month-line"></div>
+    </div>
+
+    <div class="week">
+      <div class="week-label">Week 4 — Jun 1–7</div>
+      <div class="posts">
+        <div class="post"><span class="post-format fmt-reel">Reel</span><div class="post-title">I'm attempting the Koko Head speed record in July. Here's why.</div><div class="post-pillar">Personal · Redemption arc intro</div></div>
+        <div class="post"><span class="post-format fmt-carousel">Carousel</span><div class="post-title">What is Koko Head? The brutality explained</div><div class="post-pillar">Education · Context</div></div>
+        <div class="post"><span class="post-format fmt-reel">Reel</span><div class="post-title">Go out smooth, finish violent — my pacing philosophy</div><div class="post-pillar">Education · Pillar 3</div></div>
+        <div class="post"><span class="post-format fmt-static">Static</span><div class="post-title">3 years ago I was 2 minutes off the record. Not this time.</div><div class="post-pillar">Personal · Redemption</div></div>
+      </div>
+    </div>
+
+    <div class="week">
+      <div class="week-label">Week 5 — Jun 8–14</div>
+      <div class="posts">
+        <div class="post"><span class="post-format fmt-carousel">Carousel</span><div class="post-title">How I'm training for a speed record attempt (not a race)</div><div class="post-pillar">Education · Training insight</div></div>
+        <div class="post"><span class="post-format fmt-reel">Reel</span><div class="post-title">What a hybrid athlete's training week looks like</div><div class="post-pillar">Personal · Hybrid coaching</div></div>
+        <div class="post"><span class="post-format fmt-static">Static</span><div class="post-title">The difference between a runner and an endurance athlete</div><div class="post-pillar">Education · Brand positioning</div></div>
+        <div class="post"><span class="post-format fmt-carousel">Carousel</span><div class="post-title">How to add hill sprints without burning out</div><div class="post-pillar">Education · Strength</div></div>
+      </div>
+    </div>
+
+    <div class="week">
+      <div class="week-label">Week 6 — Jun 15–21</div>
+      <div class="posts">
+        <div class="post"><span class="post-format fmt-reel">Reel</span><div class="post-title">Koko Head training update — 6 weeks out</div><div class="post-pillar">Personal · Record build</div></div>
+        <div class="post"><span class="post-format fmt-carousel">Carousel</span><div class="post-title">Why I coach all levels, not just elite runners</div><div class="post-pillar">Coaching · Social proof</div></div>
+        <div class="post"><span class="post-format fmt-reel">Reel</span><div class="post-title">The one threshold session that moved my fitness the most</div><div class="post-pillar">Education · Pillar 2</div></div>
+        <div class="post"><span class="post-format fmt-static">Static</span><div class="post-title">What 70 miles per week actually looks like (split breakdown)</div><div class="post-pillar">Education · Mileage</div></div>
+      </div>
+    </div>
+
+    <div class="week">
+      <div class="week-label">Week 7 — Jun 22–30</div>
+      <div class="posts">
+        <div class="post"><span class="post-format fmt-carousel">Carousel</span><div class="post-title">How to peak for a race without overtraining</div><div class="post-pillar">Education · Tapering</div></div>
+        <div class="post"><span class="post-format fmt-reel">Reel</span><div class="post-title">Koko Head attempt is 3 weeks away. Current fitness check.</div><div class="post-pillar">Personal · Record build</div></div>
+        <div class="post"><span class="post-format fmt-static">Static</span><div class="post-title">How sleep actually affects your running performance</div><div class="post-pillar">Education · Recovery</div></div>
+        <div class="post"><span class="post-format fmt-reel">Reel</span><div class="post-title">I'm taking on 3 new athletes. Here's what I coach.</div><div class="post-pillar">Coaching · CTA</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- JULY -->
+  <div class="month-block">
+    <div class="month-header">
+      <span class="month-title">July</span>
+      <span class="month-sub">Peak — Koko Head record attempt</span>
+      <div class="month-line"></div>
+    </div>
+
+    <div class="event-banner event-koko">🏔 Koko Head Speed Record Attempt — July (exact date TBD)</div>
+
+    <div class="week">
+      <div class="week-label">Week 8 — Jul 1–7 · Final prep</div>
+      <div class="posts">
+        <div class="post"><span class="post-format fmt-reel">Reel</span><div class="post-title">One week out from the Koko Head record attempt</div><div class="post-pillar">Personal · Final prep</div></div>
+        <div class="post"><span class="post-format fmt-carousel">Carousel</span><div class="post-title">How I'm approaching race week mentally</div><div class="post-pillar">Education · Mental performance</div></div>
+        <div class="post"><span class="post-format fmt-reel">Reel</span><div class="post-title">The redemption story — 3 years ago vs now</div><div class="post-pillar">Personal · Storytelling</div></div>
+        <div class="post"><span class="post-format fmt-static">Static</span><div class="post-title">Tomorrow I go for the record. Here's what's at stake.</div><div class="post-pillar">Personal · Hype</div></div>
+      </div>
+    </div>
+
+    <div class="week">
+      <div class="week-label">Week 9 — Jul 8–14 · Record week</div>
+      <div class="posts">
+        <div class="post"><span class="post-format fmt-reel">Reel</span><div class="post-title">Koko Head record attempt — the full video</div><div class="post-pillar">Personal · Hero content</div></div>
+        <div class="post"><span class="post-format fmt-story">Story series</span><div class="post-title">Behind the scenes: morning of the attempt</div><div class="post-pillar">Personal · Raw footage</div></div>
+        <div class="post"><span class="post-format fmt-reel">Reel</span><div class="post-title">What happened (result reveal)</div><div class="post-pillar">Personal · Outcome</div></div>
+        <div class="post"><span class="post-format fmt-carousel">Carousel</span><div class="post-title">What I learned from the attempt — win or lose</div><div class="post-pillar">Education · Reflection</div></div>
+      </div>
+    </div>
+
+    <div class="week">
+      <div class="week-label">Week 10 — Jul 15–21 · Post-attempt momentum</div>
+      <div class="posts">
+        <div class="post"><span class="post-format fmt-reel">Reel</span><div class="post-title">The training that got me to Koko Head — full breakdown</div><div class="post-pillar">Education · Training recap</div></div>
+        <div class="post"><span class="post-format fmt-carousel">Carousel</span><div class="post-title">How to train for a vertical race (not just flat miles)</div><div class="post-pillar">Education · Vertical training</div></div>
+        <div class="post"><span class="post-format fmt-static">Static</span><div class="post-title">Now pivoting to Spartan prep. Here's the plan.</div><div class="post-pillar">Personal · Next chapter</div></div>
+        <div class="post"><span class="post-format fmt-reel">Reel</span><div class="post-title">What Koko Head taught me about pacing under pressure</div><div class="post-pillar">Education · Lesson</div></div>
+      </div>
+    </div>
+
+    <div class="week">
+      <div class="week-label">Week 11 — Jul 22–31 · Spartan pivot</div>
+      <div class="posts">
+        <div class="post"><span class="post-format fmt-carousel">Carousel</span><div class="post-title">How I transition from speed training to Spartan prep</div><div class="post-pillar">Education · Hybrid training</div></div>
+        <div class="post"><span class="post-format fmt-reel">Reel</span><div class="post-title">What is a Spartan race? (And why runners should try one)</div><div class="post-pillar">Education · Awareness</div></div>
+        <div class="post"><span class="post-format fmt-static">Static</span><div class="post-title">Defending my NA Age Group title in Hawaii next month</div><div class="post-pillar">Personal · Credibility</div></div>
+        <div class="post"><span class="post-format fmt-reel">Reel</span><div class="post-title">The strength work I add for Spartan without losing run fitness</div><div class="post-pillar">Education · Hybrid coaching</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- AUGUST -->
+  <div class="month-block">
+    <div class="month-header">
+      <span class="month-title">August</span>
+      <span class="month-sub">Expand — Hawaii Spartan Race & hybrid coaching push</span>
+      <div class="month-line"></div>
+    </div>
+
+    <div class="event-banner event-spartan">🌺 Hawaii Spartan Race — August (exact date TBD)</div>
+
+    <div class="week">
+      <div class="week-label">Week 12 — Aug 1–9 · Pre-Spartan</div>
+      <div class="posts">
+        <div class="post"><span class="post-format fmt-reel">Reel</span><div class="post-title">Hawaii Spartan Race week — what my prep looks like</div><div class="post-pillar">Personal · Race prep</div></div>
+        <div class="post"><span class="post-format fmt-carousel">Carousel</span><div class="post-title">How to run a Spartan race if you're a road runner</div><div class="post-pillar">Education · Crossover</div></div>
+        <div class="post"><span class="post-format fmt-reel">Reel</span><div class="post-title">What I eat race week (Spartan edition)</div><div class="post-pillar">Education · Nutrition</div></div>
+        <div class="post"><span class="post-format fmt-static">Static</span><div class="post-title">Race day tomorrow. Hawaii. Let's go.</div><div class="post-pillar">Personal · Hype</div></div>
+      </div>
+    </div>
+
+    <div class="week">
+      <div class="week-label">Week 13 — Aug 10–16 · Race week</div>
+      <div class="posts">
+        <div class="post"><span class="post-format fmt-reel">Reel</span><div class="post-title">Hawaii Spartan Race — full race video</div><div class="post-pillar">Personal · Hero content</div></div>
+        <div class="post"><span class="post-format fmt-story">Story series</span><div class="post-title">Behind the scenes in Hawaii</div><div class="post-pillar">Personal · Raw footage</div></div>
+        <div class="post"><span class="post-format fmt-reel">Reel</span><div class="post-title">Result + what I'm taking into Hyrox Mexico City prep</div><div class="post-pillar">Personal · Transition</div></div>
+        <div class="post"><span class="post-format fmt-carousel">Carousel</span><div class="post-title">What makes a complete endurance athlete</div><div class="post-pillar">Education · Hybrid brand</div></div>
+      </div>
+    </div>
+
+    <div class="week">
+      <div class="week-label">Week 14 — Aug 17–31 · Hyrox teaser + coaching push</div>
+      <div class="posts">
+        <div class="post"><span class="post-format fmt-reel">Reel</span><div class="post-title">What is Hyrox? And why I'm racing Mexico City in October</div><div class="post-pillar">Education · Awareness</div></div>
+        <div class="post"><span class="post-format fmt-carousel">Carousel</span><div class="post-title">How I coach athletes across 3 different race formats</div><div class="post-pillar">Coaching · Social proof</div></div>
+        <div class="post"><span class="post-format fmt-reel">Reel</span><div class="post-title">Honolulu Marathon is in December. Here's my training plan.</div><div class="post-pillar">Personal · Marathon arc intro</div></div>
+        <div class="post"><span class="post-format fmt-static">Static</span><div class="post-title">Spots open for fall marathon coaching. Link in bio.</div><div class="post-pillar">Coaching · CTA</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">Michael · @michaelhc1 · Content Calendar May–Aug 2026</div>
+
+</div>
+</body>
+</html>
